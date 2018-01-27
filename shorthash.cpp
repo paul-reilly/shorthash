@@ -21,6 +21,10 @@ class ShortHash {
     ShortHash() : charList("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") 
     {};
     
+    std::string unique(std::string text) {
+        return binaryTransfer(bitwise(text), 61);
+    }
+
   private:
     typedef int32_t int32; // algorithm requires 32 bit ints
     const char* charList;
@@ -61,10 +65,5 @@ class ShortHash {
 
         std::string str(stack.begin(), stack.end());
         return str;
-    }
-
-  public:
-    std::string unique(std::string text) {
-        return binaryTransfer(bitwise(text), 61);
     }
 };
